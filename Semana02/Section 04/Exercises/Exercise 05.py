@@ -11,12 +11,26 @@ def calcular_imc(peso, altura):
 # Retorna a classificação e a situação com base no IMC
 def classificar_imc(imc):
     if imc < 18.5:
-        return "Abaixo do peso", "ganhar peso"
-    elif imc < 25:
-        return "Peso normal", "normal"
+        return "Baixo peso"
+    elif 18.5 <= imc <= 24.9:
+        return "Peso normal"
+    elif 25.0 <= imc <= 29.9:
+        return "Excesso de peso"
+    elif 30.0 <= imc <= 34.9:
+        return "Obesidade de Classe 1"
+    elif 35.0 <= imc <= 39.9:
+        return "Obesidade de Classe 2"
     else:
-        return "Acima do peso", "perder peso"
+        return "Obesidade de Classe 3"
 
+# Retorna apenas a situação com base na classificação
+def definir_situacao(classificacao):
+    if classificacao == "Peso normal":
+        return "normal"
+    elif classificacao == "Baixo peso":
+        return "ganhar peso"
+    else:
+        return "perder peso"
 
 # Dicionário do usuário
 usuario = {
@@ -33,7 +47,8 @@ usuario["altura"] = float(input("Digite sua altura em metros: "))
 
 # Processamento
 usuario["imc"] = calcular_imc(usuario["peso"], usuario["altura"])
-usuario["classificacao"], usuario["situacao"] = classificar_imc(usuario["imc"])
+usuario["classificacao"] = classificar_imc(usuario["imc"])
+usuario["situacao"] = definir_situacao(usuario["classificacao"])
 
 # Saída
 print(f"Seu IMC é: {usuario['imc']:.2f}")
