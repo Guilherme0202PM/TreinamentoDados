@@ -18,13 +18,24 @@ def classificar_imc(imc):
         return "Acima do peso", "perder peso"
 
 
-# Programa principal
-peso = float(input("Digite seu peso em kg: "))
-altura = float(input("Digite sua altura em metros: "))
+# Dicionário do usuário
+usuario = {
+    "peso": 0,
+    "altura": 0,
+    "imc": 0,
+    "classificacao": "",
+    "situacao": ""
+}
 
-imc = calcular_imc(peso, altura)
-classificacao, situacao = classificar_imc(imc)
+# Entrada de dados
+usuario["peso"] = float(input("Digite seu peso em kg: "))
+usuario["altura"] = float(input("Digite sua altura em metros: "))
 
-print(f"Seu IMC é: {imc:.2f}")
-print("Classificação:", classificacao)
-print("Situação:", situacao)
+# Processamento
+usuario["imc"] = calcular_imc(usuario["peso"], usuario["altura"])
+usuario["classificacao"], usuario["situacao"] = classificar_imc(usuario["imc"])
+
+# Saída
+print(f"Seu IMC é: {usuario['imc']:.2f}")
+print("Classificação:", usuario["classificacao"])
+print("Situação:", usuario["situacao"])
