@@ -1,0 +1,21 @@
+Projeto C – Controle de Finanças Pessoais
+
+Construir um sistema que registre receitas e despesas, calcule o saldo e gere pequenos relatórios.
+
+Funcionalidades obrigatórias
+- Registrar receita ou despesa (tipo, categoria, descrição, valor, data).
+- Listar todas as transações.
+- Mostrar saldo atual.
+- Mostrar total por categoria e/ou por mês.
+
+Classes sugeridas
+-Transacao – id, tipo (receita/despesa), categoria, descricao, valor, data.
+
+Módulos sugeridos
+- main.py – menu principal.
+- models.py – classe Transacao.
+- repositorio_transacoes.py – leitura/escrita de transacoes.csv.
+- relatorios.py – funções para resumo por categoria/mês.
+
+Arquivos de dados
+-data/transacoes.csv
