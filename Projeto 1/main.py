@@ -1,6 +1,6 @@
 import os
 from repositorio_transacoes import carregar_transacoes, garantir_copia_csv
-from relatorios import exibir_transacoes
+from relatorios import exibir_transacoes, exibir_saldo
 
 
 BASE_DIR = os.path.dirname(__file__)
@@ -12,4 +12,5 @@ garantir_copia_csv(caminho, caminho_copia)
 transacoes = carregar_transacoes(caminho_copia)
 
 exibir_transacoes(transacoes)
+exibir_saldo(transacoes)
 
