@@ -1,8 +1,21 @@
+# repositorio_transacoes.py
+import csv
 from models import Transacao
 
-def aumentar_valor(transacao: Transacao, incremento: float) -> None:
-    transacao.valor += incremento
+def carregar_transacoes(caminho_csv: str) -> list[Transacao]:
+    transacoes: list[Transacao] = []
 
-t = Transacao(1, "receita", "salário", "pagamento", "2026-01-12", 1000.0)
-aumentar_valor(t, 12)
-print(t.valor)  # 1010.0
+    with open(caminho_csv, "r", encoding="utf-8", newline="") as arquivo:
+        leitor = csv.DictReader(arquivo)  # lê usando o cabeçalho
+        for linha in leitor:
+            t = Transacao(
+                id=int(linha["id"]),
+                tipo=linha["tipo"].strip(),
+                categoria=linha["categoria"].strip(),
+                descricao=linha["descricao"].strip(),
+                data=linha["data"].strip(),          # ISO: YYYY-MM-DD
+                valor=float(linha["valor"])
+            )
+            transacoes.append(t)
+
+    return transacoes
