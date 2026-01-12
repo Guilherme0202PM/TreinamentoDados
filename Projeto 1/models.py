@@ -1,6 +1,8 @@
 class Transacao:
-    def __init__(self, id, data, valor, pessoa_id):
+    def __init__(self, id, tipo, categoria, descricao, data, valor):
         self.id = id
         self.data = data
         self.valor = valor
-        self.pessoa_id = pessoa_id
+        self.descricao = descricao
+        self.categoria = categoria
+        self.tipo = tipo
