@@ -1,6 +1,9 @@
 # repositorio_transacoes.py
 import csv
 from models import Transacao
+import shutil
+import os
+
 
 def carregar_transacoes(caminho_csv: str) -> list[Transacao]:
     transacoes: list[Transacao] = []
@@ -19,3 +22,10 @@ def carregar_transacoes(caminho_csv: str) -> list[Transacao]:
             transacoes.append(t)
 
     return transacoes
+
+def garantir_copia_csv(caminho_original: str, caminho_copia: str) -> None:
+    """
+    Cria uma cópia do arquivo CSV original caso ela ainda não exista.
+    """
+    if not os.path.exists(caminho_copia):
+        shutil.copy(caminho_original, caminho_copia)

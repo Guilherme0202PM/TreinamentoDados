@@ -1,0 +1,5 @@
+id,tipo,categoria,descricao,data,valor
+1,receita,salário,Salário mensal,2026-01-05,3500
+2,despesa,alimentação,Supermercado,2026-01-08,820.5
+3,despesa,transporte,Combustível,2026-01-10,350
+4,receita,freelance,Projeto pontual,2026-01-15,800

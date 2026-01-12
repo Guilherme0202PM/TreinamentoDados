@@ -1,10 +1,13 @@
 import os
-from repositorio_transacoes import carregar_transacoes
+from repositorio_transacoes import carregar_transacoes, garantir_copia_csv
 
 BASE_DIR = os.path.dirname(__file__)
 caminho = os.path.join(BASE_DIR, "data", "transacoes_projeto1lipai.csv")
+caminho_copia = os.path.join(BASE_DIR, "data", "transacoes_projeto1lipai_copia.csv")
 
-transacoes = carregar_transacoes(caminho)
+garantir_copia_csv(caminho, caminho_copia)
+
+transacoes = carregar_transacoes(caminho_copia)
 
 for t in transacoes:
     print(t.id, t.tipo, t.categoria, t.data, t.valor)
