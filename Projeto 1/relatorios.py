@@ -1,8 +1,10 @@
 
 def exibir_transacoes(transacoes):
+    print("Relatorio de todas as Transacoes")
     for t in transacoes:
         print(t.id, t.tipo, t.categoria, t.data, t.valor)
-        
+    print()
+
 """
 def exibir_saldo(transacoes):
     saldo = 0.0
@@ -20,4 +22,5 @@ def exibir_saldo(transacoes):
         else:
             saldo -= t.valor
     
-    print(saldo)
+    print("Saldo Atual: ",saldo)
+    print()
