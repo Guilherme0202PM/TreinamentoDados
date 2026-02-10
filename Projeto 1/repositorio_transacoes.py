@@ -48,6 +48,18 @@ def registrar_transacao(caminho_copia: str, transacao: Transacao) -> Transacao:
     """
     transacao.id = _proximo_id(caminho_copia)
 
+    # Abre em modo leitura+append binário para checar o último byte
+    with open(caminho_copia, "rb+") as f:
+        f.seek(0, os.SEEK_END)
+        tamanho = f.tell()
+
+        # Se não estiver vazio, verifica se termina com quebra de linha
+        if tamanho > 0:
+            f.seek(-1, os.SEEK_END)
+            ultimo_byte = f.read(1)
+            if ultimo_byte != b"\n":
+                f.write(b"\n")
+
     with open(caminho_copia, "a", encoding="utf-8", newline="") as arquivo:
         escritor = csv.writer(arquivo)
         escritor.writerow([

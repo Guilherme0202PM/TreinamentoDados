@@ -2,8 +2,5 @@ id,tipo,categoria,descricao,data,valor
 1,receita,salário,Salário mensal,2026-01-05,3500
 2,despesa,alimentação,Supermercado,2026-01-08,820.5
 3,despesa,transporte,Combustível,2026-01-10,350
-4,receita,freelance,Projeto pontual,2026-01-15,8005,receita,teste,ddsds,12018798,12000.0
-5,receita,dffdf,dfd,dfd,12345.0
-6,despesa,20000,dkkdjf,dfidfji,20000.0
-7,despesa,2,ccccc,cccc,15555.0
-8,receita,mega cena,ganehi,9832-78-09,25750.0
+4,receita,freelance,Projeto pontual,2026-01-15,800
+5,receita,Pix,Recebimento de Emprestimo,2026-02-09,1000.0
