@@ -1,7 +1,7 @@
 import os
 from models import Transacao
 from repositorio_transacoes import carregar_transacoes, garantir_copia_csv, registrar_transacao
-from relatorios import exibir_transacoes, exibir_saldo
+from relatorios import exibir_transacoes, exibir_saldo, exibir_saldo_por_categoria, exibir_saldo_por_mes
 
 def cadastrar_transacao_cli(caminho_copia):
     print("tipo Receita(1) ou Despesa(2)")
@@ -63,6 +63,8 @@ while True:
     print("2 - Mostrar saldo")
     print("3 - Cadastrar transação")
     print("4 - Recarregar transações do CSV")
+    print("5 - Listar transações por categoria")
+    print("6 - Listar transações por mês")
     print("9 - Sair")
 
     opcao = input("Escolha uma opção: ").strip()
@@ -86,6 +88,13 @@ while True:
         case "4":
             transacoes = carregar_transacoes(caminho_copia)
             print("Transações recarregadas do arquivo.")
+        
+        case "5":
+            exibir_saldo_por_categoria(transacoes)
+
+        case "6":
+            exibir_saldo_por_mes(transacoes)
+
 
         case "9":
             print("Saindo...")

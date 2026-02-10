@@ -3,4 +3,4 @@ id,tipo,categoria,descricao,data,valor
 2,despesa,alimentação,Supermercado,2026-01-08,820.5
 3,despesa,transporte,Combustível,2026-01-10,350
 4,receita,freelance,Projeto pontual,2026-01-15,800
-5,receita,Pix,Recebimento de Emprestimo,2026-02-09,1000.0
+5,receita,Pix,Pagamento emprestimo,2026-02-09,1000.0
