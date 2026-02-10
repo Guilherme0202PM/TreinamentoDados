@@ -85,7 +85,7 @@ while True:
 
         case "4":
             transacoes = carregar_transacoes(caminho_copia)
-            print("Transaç1ões recarregadas do arquivo.")
+            print("Transações recarregadas do arquivo.")
 
         case "9":
             print("Saindo...")
